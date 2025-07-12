@@ -19,6 +19,11 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Performance optimizations for Vercel
+  compress: true,
+  poweredByHeader: false,
+  // Enable static optimization
+  trailingSlash: false,
 };
 
 export default nextConfig;
