@@ -4,8 +4,8 @@ import { Toaster } from "@/components/ui/toaster"
 import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
-  title: 'AISite | Yashwanth',
-  description: 'A personal portfolio for Yashwanth, an AI-focused Engineer.',
+  title: 'Yashwanth Portfolio | AI Engineer',
+  description: 'Personal portfolio of Yashwanth - Final year student, AI Engineer, and Software Developer with 9.64 CGPA.',
 };
 
 export default function RootLayout({

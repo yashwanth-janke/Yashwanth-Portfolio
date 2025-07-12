@@ -15,7 +15,7 @@ const profileLinks = [
     { name: 'LinkedIn', icon: Linkedin, url: 'https://www.linkedin.com/in/yashwanth-reddy-j/', bgClass: 'bg-[#0077B5]', iconClass: 'text-white' },
     { name: 'LeetCode', imageUrl: '/images/leetcode.png', url: 'https://leetcode.com/u/yashwanth__reddy/', bgClass: 'bg-black' },
     { name: 'CodeChef', imageUrl: '/images/codechef.png', url: 'https://www.codechef.com/users/yashwanthjanke', bgClass: 'bg-white' },
-];
+] as const;
 
 
 // Desktop Content
@@ -193,8 +193,11 @@ export default function LandingSection() {
                 style={{ animationDelay: `${index * 200}ms` }}
                 aria-label={link.name}
             >
-                {'icon' in link && <link.icon className={cn("h-5 w-5", link.iconClass)} />}
-                {'imageUrl' in link && <Image src={link.imageUrl} alt={link.name} width={20} height={20} />}
+                {('icon' in link && link.icon) ? (
+                    <link.icon className={cn("h-5 w-5", link.iconClass)} />
+                ) : (
+                    ('imageUrl' in link && link.imageUrl) && <Image src={link.imageUrl} alt={link.name} width={20} height={20} />
+                )}
             </a>
         ))}
     </div>
